@@ -1,4 +1,4 @@
-import { Endereco } from './endereco'
+import { Endereco } from './endereco';
 
 export class Empresa {
 
@@ -6,6 +6,6 @@ export class Empresa {
 	nome: string;
 	email: string;
     ddd: string;
-	numero: string;
-    Endereco: endereco;
+	telefone: string;
+    endereco: Endereco;
 }

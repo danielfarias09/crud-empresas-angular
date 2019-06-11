@@ -1,7 +1,6 @@
-<div class="card text-white bg-info">
-	<div class="card-header"> Cadastro de Empresa </div>
-	<div class="card-body">
+<div>
 		<form [formGroup]="formulario" (ngSubmit)="salvarEmpresa()">
+			<h3> Empresa </h3>
 			<div class="row">
 			    <div class="col-md-4">
 			    	<div class="form-group ">
@@ -15,13 +14,50 @@
 			    	</div>
 			    </div>
 			    <div class="col-md-4">
-			    	<div class="form-group">
-			    		<label for="cpf">CPF</label>
-			    		<input type="text" formControlName="cpf" class="form-control" required >
-			    		<span class="help-block text-danger" role="alert" *ngIf="formulario.get('cpf').invalid && (formulario.get('cpf').dirty || formulario.get('cpf').touched)">
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" formControlName="email" class="form-control" required>
+						<span class="help-block text-danger" role="alert" *ngIf="formulario.get('email').invalid && (formulario.get('email').dirty || formulario.get('email').touched)">
+							<ul>
+								<li *ngIf="formulario.get('email').hasError('required')">O Campo e-mail é obrigatório!</li>
+								<li *ngIf="formulario.get('email').hasError('pattern')">Formato de e-mail inválido!</li>
+							</ul>
+						</span>
+					</div>
+			    </div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-1">
+					<label for="ddd">DDD</label>
+					<input type="text" formControlName="ddd" class="form-control" maxlength="2">
+				</div>	  
+		    	<div class="form-group col-md-3">
+		    		<label for="telefone">Telefone</label>
+		    		<input type="text" formControlName="telefone" class="form-control" maxlength="9">
+		    	</div>	
+			</div>	
+
+			<h3> Endereço </h3>
+			<div class="row">
+			    <div class="col-md-6">
+			    	<div class="form-group ">
+			    		<label for="logradouro" class="control-label">Logradouro</label>
+			    		<input type="text" formControlName="logradouro" class="form-control" required>
+			    		<span class="help-block text-danger" role="alert" *ngIf="">
 			    			<ul>
-			    				<li *ngIf="formulario.get('cpf').hasError('required')">O Campo CPF é obrigatório!</li>
-			    				<li *ngIf="formulario.get('cpf').hasError('pattern')">Formato de CPF inválido!</li>
+			    				<li *ngIf="">O Campo Logradouro é obrigatório!</li>
+			    			</ul>
+			    		</span>
+			    	</div>
+			    </div>
+			    <div class="col-md-2">
+			    	<div class="form-group">
+			    		<label for="numero">Número</label>
+			    		<input type="text" formControlName="numero" class="form-control" required >
+			    		<span class="help-block text-danger" role="alert" *ngIf="">
+			    			<ul>
+			    				<li *ngIf="">O Campo Número é obrigatório!</li>
 			    			</ul>
 			    		</span>
 			    	</div>
@@ -29,33 +65,31 @@
 			</div>
 
 			<div class="row">
-			    <div class="col-md-4">
-			    	<div class="form-group">
-			    		<label for="email">Email</label>
-			    		<input type="email" formControlName="email" class="form-control" required>
-			    		<span class="help-block text-danger" role="alert" *ngIf="formulario.get('email').invalid && (formulario.get('email').dirty || formulario.get('email').touched)">
-			    			<ul>
-			    				<li *ngIf="formulario.get('email').hasError('required')">O Campo e-mail é obrigatório!</li>
-			    				<li *ngIf="formulario.get('email').hasError('pattern')">Formato de e-mail inválido!</li>
-			    			</ul>
-			    		</span>
-			    	</div>
-			    </div>
-
-          <div class="form-group col-md-1">
-		    		<label for="ddd">DDD</label>
-		    		<input type="text" formControlName="ddd" class="form-control" maxlength="2">
-		    	</div>	  
-		    	<div class="form-group col-md-3">
-		    		<label for="telefone">Telefone</label>
-		    		<input type="text" formControlName="telefone" class="form-control" maxlength="9">
-		    	</div>	
-			</div>	
+					<div class="col-md-5">
+						<div class="form-group ">
+							<label for="bairro" class="control-label">Bairro</label>
+							<input type="text" formControlName="bairro" class="form-control" required>
+							<span class="help-block text-danger" role="alert" *ngIf="">
+								<ul>
+									<li *ngIf="">O Campo Bairro é obrigatório!</li>
+								</ul>
+							</span>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="form-group">
+							<label for="cep">CEP</label>
+							<input type="text" formControlName="cep" class="form-control" required >
+							<span class="help-block text-danger" role="alert" *ngIf="">
+								<ul>
+									<li *ngIf="formulario.get('cpf').hasError('required')">O Campo CEP é obrigatório!</li>
+								</ul>
+							</span>
+						</div>
+					</div>
+				</div>
 
 			<button type="submit" class="btn btn-success" [disabled] = "!formulario.valid">Cadastrar</button>					
 		</form>
-	</div>
-	<div class="card-footer text-muted">
-	  </div>
 </div>
 

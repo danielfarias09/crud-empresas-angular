@@ -15,6 +15,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { CadastrarEmpresaComponent } from './cadastrar-empresa/cadastrar-empresa.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { CadastrarEmpresaComponent } from './cadastrar-empresa/cadastrar-empresa
     ListarPessoaComponent,
     CadastrarPessoaComponent,
     CadastrarEmpresaComponent,
+    HeaderComponent,
+    FooterComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
