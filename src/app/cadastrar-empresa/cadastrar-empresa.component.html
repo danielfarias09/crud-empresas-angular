@@ -1,0 +1,61 @@
+<div class="card text-white bg-info">
+	<div class="card-header"> Cadastro de Empresa </div>
+	<div class="card-body">
+		<form [formGroup]="formulario" (ngSubmit)="salvarEmpresa()">
+			<div class="row">
+			    <div class="col-md-4">
+			    	<div class="form-group ">
+			    		<label for="nome" class="control-label">Nome</label>
+			    		<input type="text" formControlName="nome" class="form-control" required>
+			    		<span class="help-block text-danger" role="alert" *ngIf="">
+			    			<ul>
+			    				<li *ngIf="">O Campo nome é obrigatório!</li>
+			    			</ul>
+			    		</span>
+			    	</div>
+			    </div>
+			    <div class="col-md-4">
+			    	<div class="form-group">
+			    		<label for="cpf">CPF</label>
+			    		<input type="text" formControlName="cpf" class="form-control" required >
+			    		<span class="help-block text-danger" role="alert" *ngIf="formulario.get('cpf').invalid && (formulario.get('cpf').dirty || formulario.get('cpf').touched)">
+			    			<ul>
+			    				<li *ngIf="formulario.get('cpf').hasError('required')">O Campo CPF é obrigatório!</li>
+			    				<li *ngIf="formulario.get('cpf').hasError('pattern')">Formato de CPF inválido!</li>
+			    			</ul>
+			    		</span>
+			    	</div>
+			    </div>
+			</div>
+
+			<div class="row">
+			    <div class="col-md-4">
+			    	<div class="form-group">
+			    		<label for="email">Email</label>
+			    		<input type="email" formControlName="email" class="form-control" required>
+			    		<span class="help-block text-danger" role="alert" *ngIf="formulario.get('email').invalid && (formulario.get('email').dirty || formulario.get('email').touched)">
+			    			<ul>
+			    				<li *ngIf="formulario.get('email').hasError('required')">O Campo e-mail é obrigatório!</li>
+			    				<li *ngIf="formulario.get('email').hasError('pattern')">Formato de e-mail inválido!</li>
+			    			</ul>
+			    		</span>
+			    	</div>
+			    </div>
+
+          <div class="form-group col-md-1">
+		    		<label for="ddd">DDD</label>
+		    		<input type="text" formControlName="ddd" class="form-control" maxlength="2">
+		    	</div>	  
+		    	<div class="form-group col-md-3">
+		    		<label for="telefone">Telefone</label>
+		    		<input type="text" formControlName="telefone" class="form-control" maxlength="9">
+		    	</div>	
+			</div>	
+
+			<button type="submit" class="btn btn-success" [disabled] = "!formulario.valid">Cadastrar</button>					
+		</form>
+	</div>
+	<div class="card-footer text-muted">
+	  </div>
+</div>
+
