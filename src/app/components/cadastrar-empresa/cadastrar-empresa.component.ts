@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Empresa } from '../model/empresa';
-import { Endereco } from '../model/endereco';
-import { ApiService } from '../service/api.service';
+import { Empresa } from '../../model/empresa';
+import { Endereco } from '../../model/endereco';
+import { ApiService } from '../../service/api.service'
 import { Router, ActivatedRoute } from "@angular/router";
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 

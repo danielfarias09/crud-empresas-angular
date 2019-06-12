@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListarPessoaComponent } from './listar-pessoa/listar-pessoa.component';
-import { CadastrarPessoaComponent } from './cadastrar-pessoa/cadastrar-pessoa.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material';
@@ -14,7 +12,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDividerModule} from '@angular/material/divider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
-import { CadastrarEmpresaComponent } from './cadastrar-empresa/cadastrar-empresa.component';
+import { CadastrarEmpresaComponent } from './components/cadastrar-empresa/cadastrar-empresa.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -23,8 +21,6 @@ import { ListarEmpresaComponent } from './components/listar-empresa/listar-empre
 @NgModule({
   declarations: [
     AppComponent,
-    ListarPessoaComponent,
-    CadastrarPessoaComponent,
     CadastrarEmpresaComponent,
     HeaderComponent,
     FooterComponent,
