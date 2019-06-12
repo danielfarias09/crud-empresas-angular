@@ -18,6 +18,7 @@ import { CadastrarEmpresaComponent } from './cadastrar-empresa/cadastrar-empresa
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ListarEmpresaComponent } from './components/listar-empresa/listar-empresa.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MenuComponent } from './components/menu/menu.component';
     CadastrarEmpresaComponent,
     HeaderComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent,
+    ListarEmpresaComponent
   ],
   imports: [
     BrowserModule,

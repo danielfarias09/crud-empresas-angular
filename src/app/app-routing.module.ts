@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ListarPessoaComponent } from './listar-pessoa/listar-pessoa.component';
+import { ListarEmpresaComponent } from './components/listar-empresa/listar-empresa.component';
 import { CadastrarEmpresaComponent } from './cadastrar-empresa/cadastrar-empresa.component';
 
 const routes: Routes = [
-	{ path:  '', redirectTo:  'pessoas', pathMatch:  'full' },
+	{ path:  '', redirectTo:  'empresas', pathMatch:  'full' },
 	{
     path:  '',
-    component:  ListarPessoaComponent
+    component:  ListarEmpresaComponent
 	},
 	{
     path:  'cadastrar-empresa',

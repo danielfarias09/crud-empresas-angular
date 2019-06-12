@@ -57,8 +57,14 @@ export class CadastrarEmpresaComponent implements OnInit {
 
   salvarEmpresa(){
     this.empresa = this.formulario.value;
-    this.empresa.id = this.idEmpresa;
+    this.endereco.logradouro =  this.formulario.value.logradouro;
+    this.endereco.numero = this.formulario.value.numero;
+    this.endereco.bairro = this.formulario.value.bairro;
+    this.endereco.cep = this.formulario.value.cep;
+
     this.empresa.endereco = this.endereco;
+    console.log(this.empresa)
+    this.empresa.id = this.idEmpresa;
     
     if(this.empresa.id){
       this.api.updateEmpresa(this.empresa).subscribe((response) => {
